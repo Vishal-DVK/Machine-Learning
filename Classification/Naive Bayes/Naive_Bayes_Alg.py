@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Import Libraries 
-data = pd.read_csv(r"C:\Users\visha\Downloads\12th\30th, 31st\Social_Network_Ads.csv")
+data = pd.read_csv(r"C:\Users\visha\OneDrive\Desktop\Data Science\Classroom\3.May 2025\12th May Naive Bayes\Naive Bayes Classification\Social_Network_Ads.csv")
 
 # Split the data
 x = data.iloc[:,[2,3]].values
@@ -14,14 +14,14 @@ from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.20,random_state=0)
 
 # Feature Scaling 
-from sklearn.preprocessing import Normalizer
-nz = Normalizer()
+from sklearn.preprocessing import StandardScaler
+nz = StandardScaler()
 x_train = nz.fit_transform(x_train)
 x_test = nz.fit_transform(x_test)
 
 # Train the model 
-from sklearn.naive_bayes import MultinomialNB
-nb = MultinomialNB()
+from sklearn.naive_bayes import GaussianNB
+nb = GaussianNB()
 nb.fit(x_train,y_train)
 
 y_pred = nb.predict(x_test)
