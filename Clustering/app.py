@@ -6,10 +6,10 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from datetime import datetime
 
-st.title("Mall Customer Segmentation - KMeans")
+st.title("Customer Segmentation with K-Means Clustering")
 
 # Upload file
-uploaded_file = st.file_uploader("Upload Mall_Customers.csv", type="csv")
+uploaded_file = st.file_uploader("Upload CSV file for KMeans analysis", type="csv")
 
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
